@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans 
+    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd" 
+    default-destroy-method="defaultDestroyMethod" default-init-method="defaultInitMethod">
+    
+    <bean id="student" class="com.spring.beanlifecyle.Student" init-method="testInitMethod" destroy-method="testDestroyMethod" >
+   		<property name="sno" value="1"/>
+    	<property name="name" value="Adithya"/>
+    	<property name="age" value="30"/>    	
+    </bean>
+    
+    <bean id="student.address" class="com.spring.beanlifecyle.Address" scope="prototype" >
+    	<property name="drno" value="12-13-34"/>
+   		<property name="streetName" value="Miyapur"/>
+		<property name="cityName" value="Hyderabad"/>
+		<property name="state" value="Telangana"/>
+		<property name="country" value="India"/>
+    </bean>
+    
+</beans>

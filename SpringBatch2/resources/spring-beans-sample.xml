@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans 
+    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+    
+    <bean id="student" class="com.spring.sample.Student" scope="singleton">
+    	<constructor-arg name="sno" value="77456" type="int"></constructor-arg>
+    	<constructor-arg name="name" value="chaitanya" type="String"></constructor-arg>
+    	<constructor-arg name="age" value="28" type="int"></constructor-arg>
+    	<constructor-arg name="address" ref="student.address" /> 
+    	
+   		<!-- <property name="sno" value="1"/>
+    	<property name="name" value="Adithya"/>
+    	<property name="age" value="30"/>
+    	<property name="address" ref="student.address"/> -->
+    </bean>
+    
+    <bean id="student.address" class="com.spring.sample.Address" >
+    	<constructor-arg name="drno" value="12-13-34" type="String"/>
+   		<constructor-arg name="streetName" value="Miyapur" type="String"/>
+		<constructor-arg name="cityName" value="Hyderabad" type="String"/>
+		<constructor-arg name="state" value="Telangana" type="String"/>
+		<constructor-arg name="country" value="India" type="String"/>
+    </bean>
+    
+</beans> 	

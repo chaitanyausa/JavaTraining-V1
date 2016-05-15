@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<bean id="employee" class="com.spring.collection.sample.Employee"
+		scope="singleton">
+		<constructor-arg name="id" value="77456" type="int"></constructor-arg>
+		<constructor-arg name="name" value="chaitanya" type="String"></constructor-arg>
+		<constructor-arg name="address" ref="employee.address" />
+		<constructor-arg name="address">
+			<list>
+				<ref bean="employee.address" />
+				<ref bean="employee.address1" />
+			</list>
+		</constructor-arg>
+		<constructor-arg name="account" ref="employee.account" />
+		<constructor-arg name="account">
+			<set>
+				<ref bean="employee.account" />
+			</set>
+		</constructor-arg>
+
+	</bean>
+
+
+	<bean id="employee.address" class="com.spring.collection.sample.Address">
+		<constructor-arg name="drno" value="12-13-34" type="String" />
+		<constructor-arg name="streetName" value="Miyapur"
+			type="String" />
+		<constructor-arg name="cityName" value="Hyderabad"
+			type="String" />
+		<constructor-arg name="state" value="Telangana" type="String" />
+		<constructor-arg name="country" value="India" type="String" />
+	</bean>
+	<bean id="employee.address1" class="com.spring.collection.sample.Address">
+		<constructor-arg name="drno" value="1-1-3" type="String" />
+		<constructor-arg name="streetName" value="Banjarahills"
+			type="String" />
+		<constructor-arg name="cityName" value="Hyderabad"
+			type="String" />
+		<constructor-arg name="state" value="Telangana" type="String" />
+		<constructor-arg name="country" value="India" type="String" />
+	</bean>
+	<bean id="employee.account" class="com.spring.collection.sample.Account">
+		<constructor-arg name="accountNO" value="76857687" type="int" />
+		<constructor-arg name="type" value="Savings" type="String" />
+		<constructor-arg name="location" value="Hyderabad" type="String" />
+	</bean>
+	
+</beans> 	

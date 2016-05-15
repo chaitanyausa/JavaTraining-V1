@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans 
+    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+    
+    <bean id="student" class="com.spring.inject.datatypes.Student">    	
+   		<property name="sno" value="1"/>
+    	<property name="name" value="Adithya"/>
+    	<property name="age" value="30"/>
+    	<property name="address" ref="student.address"/>
+    	<property name="subjects">
+    		<list>
+    			<value>Maths</value>
+    			<value>Social</value>
+    			<value>Science</value>
+    		</list>
+    	</property>
+    	<property name="addList">
+    		<list>
+    			<ref bean="student.address"/>
+    			<ref bean="student.address1"/>
+    		</list>    		
+    	</property>
+    	<!-- 
+    	<property name="addSet">
+    	
+    		<set>
+    			<value/>
+    		</set>
+    	</property>
+    	<property name="addMap">
+    		<map>
+    			<entry key="" value=""/>
+    		</map>
+    	</property>
+    	 -->
+    </bean>
+    
+    <bean id="student.address" class="com.spring.inject.datatypes.Address" >
+    	<property name="drno" value="12-13-34"/>
+   		<property name="streetName" value="Miyapur"/>
+		<property name="cityName" value="Hyderabad"/>
+		<property name="state" value="Telangana"/>
+		<property name="country" value="India"/>
+    </bean>
+    
+        
+    <bean id="student.address1" class="com.spring.inject.datatypes.Address" >
+    	<property name="drno" value="10-11-37"/>
+   		<property name="streetName" value="Gajuwaka"/>
+		<property name="cityName" value="Vizag"/>
+		<property name="state" value="AndhrapRadesh"/>
+		<property name="country" value="India"/>
+    </bean>
+    
+</beans>

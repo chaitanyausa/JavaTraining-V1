@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans 
+    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+    
+    <bean id="shapeTest" class="com.spring.autowire.ShapeTest" autowire="constructor">
+   		<!-- <property name="circle" ref="shape.circle"/> -->    	
+    </bean>
+   
+    <bean id="circle" class="com.spring.autowire.Circle">
+    	<property name="side" value="10"/>
+    </bean>
+    
+   <!-- 
+     <bean id="circle2" class="com.spring.autowire.Circle">
+    	<property name="side" value="10"/>
+    </bean>
+    -->
+     
+     <bean id="square" class="com.spring.autowire.Square">
+    	<property name="side" value="5"/>
+    </bean>
+    
+</beans>

@@ -1,0 +1,24 @@
+package com.spring.postprocessors;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+
+
+public class SpringBeanPostProcessorTest {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		
+		
+		ApplicationContext context = new ClassPathXmlApplicationContext("spring-beans-beanpostprocessor.xml");
+		
+		Student student = (Student)context.getBean("student");
+		
+		
+		//System.out.println(student);
+	}
+
+}

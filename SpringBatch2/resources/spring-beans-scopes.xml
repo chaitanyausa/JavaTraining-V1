@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans 
+    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+    
+    <bean id="student" class="com.spring.scopes.Student" scope="singleton" lazy-init="true">
+   		<property name="sno" value="1"/>
+    	<property name="name" value="Adithya"/>
+    	<property name="age" value="30"/>    	
+    </bean>
+    <!-- 
+    <property name="drno" value="12-13-34"/>
+   		<property name="streetName" value="Miyapur"/>
+		<property name="cityName" value="Hyderabad"/>
+		<property name="state" value="Telangana"/>
+		<property name="country" value="India"/>
+     -->
+    <bean id="student.address" class="com.spring.scopes.Address" scope="prototype" >
+    	<!-- 
+    	<constructor-arg index="0" value="12-13-34"/>
+    	<constructor-arg index="1" value="Miyapur"/>
+    	<constructor-arg index="2" value="Hyderabad"/>
+    	<constructor-arg index="3" value="Telangana"/>
+    	<constructor-arg index="4" value="India"/>
+    	 -->
+    	 <constructor-arg name="drno" value="12-13-34" />
+    	<constructor-arg name="streetName" value="Miyapur"/>
+    	<constructor-arg name="cityName" value="Hyderabad"/>
+    	<constructor-arg name="state" value="Telangana"/>
+    	<constructor-arg name="country" value="India"/>
+    </bean>
+    
+</beans>

@@ -1,0 +1,20 @@
+Aspect 	
+	A module which has a set of APIs providing cross-cutting requirements. 
+	For example, a logging module would be called AOP aspect for logging. 
+	An application can have any number of aspects depending on the requirement.
+	
+Advice 
+	This is the actual action to be taken either before or after the method execution. 
+	This is actual piece of code that is invoked during program execution by Spring AOP framework.
+	
+Join point
+	This represents a point in your application where you can plug-in AOP aspect. 
+	You can also say, it is the actual place in the application where an action will be taken 
+	using Spring AOP framework.
+		
+Point Cut
+	This is a set of one or more join points where an advice should be executed. 
+	You can specify point cuts using expressions or patterns as we will see in our AOP examples.
+	
+Types advices : 
+	After, Before, Around, After returning, After throwing
