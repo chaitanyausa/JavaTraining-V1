@@ -1,0 +1,5 @@
+Implementation	read-only	nonstrict-read-write	read-write	transactional
+EH Cache			Yes			Yes						Yes			No
+OS Cache			Yes			Yes						Yes			No
+Swarm Cache			Yes			Yes						No			No
+JBoss Cache			No			No						No			Yes
